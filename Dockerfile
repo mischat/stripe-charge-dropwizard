@@ -13,4 +13,4 @@ RUN ["mvn", "package"]
 
 EXPOSE 8080
 
-CMD ["/usr/lib/jvm/java-8-oracle/bin/java", "-jar", "target/stripe-charge-dropwizard-1.0-SNAPSHOT.jar", "server", "target/classes/stripe-charge-dropwizard.yml"]
+CMD ["java", "-jar", "target/stripe-charge-dropwizard-1.0-SNAPSHOT.jar", "server", "target/classes/stripe-charge-dropwizard.yml"]
