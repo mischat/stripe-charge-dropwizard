@@ -1,0 +1,16 @@
+# Mac OSX
+.DS_Store
+
+# IntelliJ related
+
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Configuration file with Stripe secret key
+src/main/resources/stripe-charge-dropwizard.yml
+
+# Build 
+target/
+

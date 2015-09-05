@@ -1,0 +1,11 @@
+coreAllowedOrigin: "*"
+stripeSecretKey: sk_test_XXXX
+
+server:
+  type: simple
+  applicationContextPath: /app
+  adminContextPath: /admin
+  connector:
+    type: http
+    port: 8080
+
