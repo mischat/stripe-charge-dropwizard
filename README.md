@@ -1,4 +1,4 @@
-Dropwizard Skeleton
+Stripe Charge Dropwizard
 ================
 
 Intro
