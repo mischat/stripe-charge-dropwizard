@@ -4,7 +4,9 @@ FROM dockerfile/java:oracle-java8
 RUN apt-get update  
 RUN apt-get install -y maven
 
-RUN cd /usr/local/stripe-charge-dropwizard/ && git clone https://github.com/mischat/stripe-charge-dropwizard.git
+RUN mkdir /usr/local/stripe-charge-dropwizard/
+RUN cd /usr/local/stripe-charge-dropwizard/
+ADD . /usr/local/stripe-charge-dropwizard/
 
 WORKDIR /usr/local/stripe-charge-dropwizard/
 RUN ["mvn", "package"]
