@@ -26,7 +26,7 @@ public class ChargeResource {
 
     @POST
     @Timed
-    public Response makeStripeCharge(@FormParam("token") String token, @FormParam("email") String email, @FormParam("amount") String amount) {
+    public Response makeStripeCharge(@FormParam("token") String token, @FormParam("email") String email, @FormParam("amount") String amount) throws Exception {
 
         Stripe.apiKey = stripeSecretKey;
 
@@ -38,11 +38,10 @@ public class ChargeResource {
 
         try {
             Charge.create(chargeParams);
+            logger.info("Success: '"+email+"' just made a payment of '"+amount+"' in pence with token '"+token+"'");
             return Response.ok().build();
         } catch (Exception e) {
-            logger.error("Failed to make Stripe charge", e);
-            return Response.serverError().build();
+            throw new Exception(e);
         }
-
     }
 }
