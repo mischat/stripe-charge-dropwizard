@@ -1,9 +1,3 @@
-#FROM java:8u66-jdk
-
-# Install maven
-#RUN apt-get update  
-#RUN apt-get install -y maven
-
 FROM jamesdbloom/docker-java8-maven
 
 RUN mkdir /usr/local/stripe-charge-dropwizard/
